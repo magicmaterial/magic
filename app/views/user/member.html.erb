@@ -1,0 +1,25 @@
+<%= provide(:title,"Member") %>
+<div class = "data_form">
+    <div class = "data_content">
+        
+    
+<table>
+<tr>
+<th><%= "name" %></th>
+<th><%= "email" %></th>
+<th><%= "created_at" %></th>
+<th><%= "image" %></th>
+</tr>
+</table>
+<% @user.each do |user| %>
+<table>
+<tr>
+<td><%= user.name %></td>
+<td><%= user.email %></td>
+<td><%= user.created_at %></td>
+<td><%= user.image %></td>
+</tr>
+<% end %>
+</table>
+</div>
+</div>

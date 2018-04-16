@@ -1,0 +1,249 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ /*ヘッダー*/
+ 
+ header {
+    height:60px;
+    width:100%;
+    background-color:rgba(34,49,52,0.9);
+    margin:auto;
+    position:fixed;
+}
+
+.header_logo {
+    color:white;
+    font-size:28px;
+    float:left;
+    padding-left:40px;
+    
+}
+.header_list {
+    float:right;
+    padding-right:50px;
+    
+}
+.header_list li{
+    float:left;
+    padding-top:30px;
+    padding-right:40px;
+    list-style:none;
+    color:white;
+    cursor: pointer;
+    
+}
+
+/*メッセージ*/
+.message {
+    height:50px;
+    color:green;
+    padding-top: 60px;
+    float:right;
+    font-size:30px;
+}
+
+/*エラーメッセージ*/
+
+.error_message {
+    color:red;
+    font-size: large;
+}
+
+/*topイメージ*/
+
+.top_image {
+    
+    padding: 200px 0 100px;
+    height: 100vh;
+    width:100vw;
+    background: url('/epo.jpg');
+    /* 画像を常に天地左右の中央に配置 */
+    background-position: center center;
+    /* 画像をタイル状に繰り返し表示しない */
+    background-repeat: no-repeat;
+    /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+    background-attachment: fixed;
+    /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+    background-size: cover;
+    /* 背景画像が読み込まれる前に表示される背景のカラー */
+    background-color: #464646;
+}
+.top_image h1{
+    color:white;
+    
+    text-align: center;
+    /*display: flex;
+	align-items: center;
+	justify-content: center;*/
+    font-size:64px;
+    position: relative;
+    opacity:0.8;
+}
+
+/*ログインフォーム+投稿一覧*/
+
+.login_form {
+    text-align: center;
+    width:100%;
+    height:600px;
+    padding-top: 100px;
+    background-color: #f0fff0;
+}
+.login_content {
+    /*background-color: #b0c4de;*/
+    width:600px;
+    height:300px;
+    margin: auto;
+    /*border:1px solid #b0c4de;
+    border-radius:20px;*/
+    opacity:0.8;
+}
+
+.login_form h1{
+    font-size:40px;
+    color:#a9a9a9;
+    opacity:0.9;
+    padding-right:500px;
+    margin-bottom:80px;
+}
+
+/*投稿一覧*/
+
+.show_content {
+    height:30px;
+    width:300px;
+    margin:auto;
+    background-color: #b0c4de;
+    border-radius: 10px;
+    text-align: left;
+    padding:5px;
+}
+
+/*新規投稿*/
+
+.new_content textarea{
+    padding:80px 80px;
+    margin:50px;
+}
+
+/*編集･削除*/
+
+.edit_content {
+    height:30px;
+    width:300px;
+    margin:auto;
+    background-color: #b0c4de;
+    border-radius: 10px;
+    text-align: left;
+    
+    padding:5px;
+}
+
+/*新規登録フォーム*/
+
+.login_content input{
+    height:30px;
+    width:200px;
+    border-radius: 10px;
+}
+
+/*メンバー*/
+
+td,th{
+    border:1px solid black;
+    padding:5px;
+    width:150px;
+}
+
+/*データ管理*/
+
+.data_form {
+    text-align: center;
+    width:100%;
+    height:600px;
+    padding-top: 100px;
+    background-color: #f0fff0;
+}
+
+.data_form h1{
+    font-size:40px;
+    color:#a9a9a9;
+    opacity:0.9;
+    padding-right:500px;
+    margin-bottom:80px;
+}
+
+.data_content {
+   /*background-color: #b0c4de;*/
+    width:1000px;
+    height:500px;
+    margin: auto;
+    /*border:1px solid #b0c4de;
+    border-radius:20px;*/
+    opacity:0.8;
+}
+
+/*アップデート*/
+
+.update_form {
+    text-align: center;
+    width:100%;
+    height:600px;
+    padding-top: 100px;
+    background-color: #f0fff0;
+}
+
+.update_form h1{
+    font-size:40px;
+    color:#a9a9a9;
+    opacity:0.9;
+    padding-right:500px;
+    margin-bottom:80px;
+}
+
+.update_content {
+    /*background-color: #b0c4de;*/
+    width:600px;
+    height:300px;
+    margin: auto;
+    /*border:1px solid #b0c4de;
+    border-radius:20px;*/
+    opacity:0.8;
+}
+.update_content input[type="file"] {
+    margin:auto;
+}
+
+.login_content input[type="file"] {
+    margin:auto;
+}
+
+
+/*イメージ*/
+
+.image {
+    
+}
+
+.image img{
+  width: 100px;
+  height: 100px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+  /*画像をレイアウト内にフィットさせる*/
+  margin-bottom:10px;
+}
+

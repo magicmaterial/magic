@@ -1,0 +1,20 @@
+<%= provide(:title,"Edit_form") %>
+<div class = "update_form">
+    <h1>プロフィール</h1>
+    <% if @error_message %>
+    <div class = "error_message">
+    <%= @error_message %>
+    </div>
+    <% end %>
+    <div class = "image">
+        <img src = "<%= "/#{@current_user.image}" %>"><p>イメージ</p>
+    </div>
+    <%#= form_tag("/user/#{@current_user.id}/update",{multipart: true}) do %>
+    <div class = "update_content">
+        <P>名前: <%= @current_user.name %></P>
+        <p>メールアドレス: <%= @current_user.email %></p>
+        <%= link_to("編集","/user/#{@current_user.id}/destroy_form") %>
+        <%= link_to("削除","/user/#{@current_user.id}/destroy",{method: "post"} ) %>
+    </div>
+    
+</div>

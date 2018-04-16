@@ -1,0 +1,28 @@
+<% provide(:title,"New entry") %>
+<div class = "login_form">
+    <h1>新規登録</h1>
+    <% @user.errors.full_messages.each do |message|%>
+    <div class = "error_message">
+        <%= message %>
+    </div>
+    <% end %>
+    <%= form_tag("/user/new_entry",{multipart: true}) do %>
+    <div class = "login_content">
+        <form class="form-horizontal">
+            <div class = "form-group">
+            <label>お名前</label><br />
+            <input type = "text" name = "name" class = "form_control" value = "<%= @name %>">
+            </div>
+            <div class = "form-group">
+            <label>メールアドレス</label><br />
+            <input type = "text" name = "email" class = "form_control" value = "<%= @email %>">
+            </div>
+            <div class = "form-group">
+            <!label></label><br />
+            <!input type = "file" name = "image" class = "form_control">
+            </div>
+        </form>
+        <input type="submit" value="登録">
+    </div>
+    <% end %>
+</div>

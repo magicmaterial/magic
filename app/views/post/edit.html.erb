@@ -1,0 +1,14 @@
+<% provide(:title,"Edit form") %>
+<div class = "show_form  login_form edit_form">
+    <h1>編集･削除</h1>
+<div class = "edit_content new_content">
+    <%= @post.content %>
+    
+</div>
+     <%# if @current_user == @post.id %>
+     <%= link_to("編集","/post/#{@post.id}/edit_form") %>
+     <%= link_to("削除","/post/#{@post.id}/destroy",{method: "post"}) %>
+     <%# end %>
+</div>
+
+#紐づけ完了次第修正

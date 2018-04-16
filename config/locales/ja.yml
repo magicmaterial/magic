@@ -1,0 +1,9 @@
+ja:
+ activerecord:
+ models:
+ 
+ attributes:
+ user:
+  name:
+   email:
+   content: コンテンツ

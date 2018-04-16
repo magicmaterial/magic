@@ -1,0 +1,21 @@
+<% provide(:title,"Member edit") %>
+<div class = "login_form">
+    <h1>編集</h1>
+    <% if @error_message %>
+    <div class = "error_message">
+        <%= @error_message %>
+    </div>
+    <% end %>
+    
+    <div class = "login_content">
+        <P>名前</P>
+        <input type = "text" name = "name" value = "<%= @current_user.name %>">
+        <p>メールアドレス</p>
+        <input type = "text" name = "email" value = "<%= @current_user.email %>">
+        <p>パスワード</p>
+        <input type = "text"><br />
+        <%= link_to("更新","/user/#{@current_user.id}/update",{method: "post"}) %>
+    </div>
+    
+</div>
+   
