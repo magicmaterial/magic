@@ -3,19 +3,17 @@
     <h1>編集</h1>
     <% if @error_message %>
     <div class = "error_message">
-        <%= @error_message %>
-    </div>
     <% end %>
-    
+    <%= form_tag("/user/#{@user.id}/update",multipart: true) do %>
     <div class = "login_content">
         <P>名前</P>
-        <input type = "text" name = "name" value = "<%= @current_user.name %>">
+        <input type = "text" name="name" value = "<%= @current_user.name %>">
         <p>メールアドレス</p>
-        <input type = "text" name = "email" value = "<%= @current_user.email %>">
-        <p>パスワード</p>
-        <input type = "text"><br />
-        <%= link_to("更新","/user/#{@current_user.id}/update",{method: "post"}) %>
+        <input type = "text" name="email" value = "<%= @current_user.email %>">
+        <p>写真</p>
+        <input type = "file" name = "image" ><br />
+        <input type="submit" value="更新">
     </div>
-    
+    <% end %>
 </div>
    

@@ -76,19 +76,22 @@ class UserController < ApplicationController
     @user = User.find_by(id: @current_user.id)
     @user.name = params[:name]
     @user.email = params[:email]
+    #@user.save
     if params[:image]
      @user.image = "#{@user.id}.jpg"
      image = params[:image]
      File.binwrite("public/#{@user.image}",image.read)
     end
+    
     if @user.save
       
       flash[:notice] = "更新完了しました"
-      redirect_to("/user/#{@current_user.id}/edit_form")
+      redirect_to("/user/#{@user.id}/edit_form")
     else
       @error_message = "名前またはメールアドレスを入力して下さい"
       render("/user/destroy_form")
     end
+    
   end
   
 end
