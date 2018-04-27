@@ -1,19 +1,22 @@
 <header>
       <h1 class = "header_logo"><%= link_to("Community","/") %></h1>
-      <div class = "header_list">
       <% if @current_user %>
+      <div class = "header_list">
       <ul>
         <li>ユーザー:<%=link_to(@current_user.name,"/user/#{@current_user.id}/edit_form") %></li>
         <li><%= link_to("ログアウト","/logout",{method: "post"}) %></li>
-        <li><%= link_to("投稿一覧","/post/show") %></li>
+        <li><%= link_to("投稿一覧","/post/index") %></li>
         <li><%= link_to("新規投稿","/post/new") %></li>
-        <li><%= link_to("ユーザー一覧","/user/member") %></li>
+        <li><%= link_to("postテーブル","/post/post_table") %></li>
+        <li><%= link_to("userテーブル","/user/member") %></li>
       </ul>
+      </div>
       <% else %>
+      <div class = "header_list">
       <ul>
         <li><%= link_to("新規登録","/user/new") %></li>
         <li><%= link_to("ログイン","/login_form") %></li>
       </ul>
-      <% end %>
       </div>
+      <% end %>
 </header>

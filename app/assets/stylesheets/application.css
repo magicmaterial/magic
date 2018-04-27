@@ -13,58 +13,85 @@
  *= require_tree .
  *= require_self
  */
- /*ヘッダー*/
+ /*
+ 
+ 
+ */
+ /*ヘッダー-----------------------------*/
+ body,p,form,input{margin: 0}
  
  header {
-    height:60px;
-    width:100%;
-    background-color:rgba(34,49,52,0.9);
-    margin:auto;
-    position:fixed;
+    margin:0;
+    margin-right: auto;
+    margin-left : auto;
+	height:50px;
+	width:100%;
+	background-color:rgba(34,49,52,0.9);
+	color:white;
+ }
+ 
+.header_logo {
+    margin:0;
+    float:left;
+    margin-top:5px;
+    margin-left:20px;
 }
 
-.header_logo {
-    color:white;
-    font-size:28px;
-    float:left;
-    padding-left:40px;
-    
-}
-.header_list {
-    float:right;
-    padding-right:50px;
-    
-}
 .header_list li{
     float:left;
-    padding-top:30px;
-    padding-right:40px;
-    list-style:none;
+    list-style: none;
+    margin:0;
+    margin-right:20px;
     color:white;
     cursor: pointer;
-    
 }
 
-/*メッセージ*/
-.message {
-    height:50px;
-    color:green;
-    padding-top: 60px;
+.header_list ul{
+    margin:0;
     float:right;
-    font-size:30px;
+    margin-right:50px;
+    margin-top:20px;
+}
+
+
+
+
+/*メッセージ-----------------*/
+.message {
+    height:18px;
+    color:red;
+    padding-top: 0px;
+    float:left;
+    font-size:18px;
+    clear:both;
+}
+.error_message li{
+    margin:0px;
+    list-style: none;
 }
 
 /*エラーメッセージ*/
+.message {
+    height:18px;
+    color:green;
+    padding-top: 0px;
+    float:left;
+    font-size:18px;
+    clear:both;
+}
 
 .error_message {
+    height:18px;
     color:red;
-    font-size: large;
+    padding-top: 0px;
+    float:left;
+    font-size:18px;
+    clear:both;
 }
 
 /*topイメージ*/
 
 .top_image {
-    
     padding: 200px 0 100px;
     height: 100vh;
     width:100vw;
@@ -82,7 +109,6 @@
 }
 .top_image h1{
     color:white;
-    
     text-align: center;
     /*display: flex;
 	align-items: center;
@@ -92,34 +118,124 @@
     opacity:0.8;
 }
 
-/*ログインフォーム+投稿一覧*/
+/*ログインフォーム+投稿一覧-------------------------------------*/
+.form {
+    width:100%;
+    height:100vh;
+    
+    padding-top:100px;
+}
+
+.form_color {
+    background-color: #98fb98;
+}
 
 .login_form {
-    text-align: center;
-    width:100%;
-    height:600px;
-    padding-top: 100px;
-    background-color: #f0fff0;
-}
-.login_content {
-    /*background-color: #b0c4de;*/
-    width:600px;
-    height:300px;
-    margin: auto;
-    /*border:1px solid #b0c4de;
-    border-radius:20px;*/
-    opacity:0.8;
+   margin:0px auto;
+   width:250px;
+   /*height:300px;*/
+   background:#696969 ;
+   border-radius: 5px;
+   padding: 20px;
 }
 
-.login_form h1{
+.form-title {
+    border-bottom:1px solid #d3d3d3;
+    margin-bottom: 10px;
+    text-align:center;
+    font-size: 30px;
+}
+
+.submit input{
+   background: #1abc9c;
+   border-radius: 5px;
+   padding:5px 8px 5px 8px;
+   color:#fff;
+   cursor:pointer;
+}
+
+.login_form p{
+    font-size:18px;
+}
+
+.username {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width:200px;
+    padding:5px;
+    font-size: 14px;
+    margin:0px auto;
+    cursor:text;
+}
+
+.submit input:hover {
+  background-color: #31c8aa;
+  
+}
+
+.submit{
+    text-align: center;
+    margin-top:10px;
+}
+
+/*新規投稿------*/
+
+.create_form {
+   height:300px;
+   width:400px;
+   background-color: #98fb98;
+   margin:0px auto;
+   border:2px double #00ffff;
+   border-radius:5px;
+}
+
+.form h1{
     font-size:40px;
     color:#a9a9a9;
     opacity:0.9;
-    padding-right:500px;
-    margin-bottom:80px;
 }
 
-/*投稿一覧*/
+.textarea textarea{
+    height:200px;
+    width:300px;
+    padding:10px;
+    
+}
+
+.textarea {
+    margin:20px 20px;
+}
+
+.create_submit {
+    margin-top:10px;
+    text-align: right;
+}
+
+.create_submit input{
+   background: #1abc9c;
+   border-radius: 5px;
+   padding:5px 8px 5px 8px;
+   color:#fff;
+   cursor:pointer;
+}
+
+.create_submit input:hover {
+  background-color: #31c8aa;
+  
+}
+
+.Post_form {
+    
+    text-align: center;
+    /*width:100%;
+    height:600px;*/
+    padding-top: 100px;
+    background-color: #f0fff0;
+}
+
+/*投稿一覧-------------------------------------------*/
 
 .show_content {
     height:30px;
@@ -129,6 +245,7 @@
     border-radius: 10px;
     text-align: left;
     padding:5px;
+    
 }
 
 /*新規投稿*/
@@ -138,18 +255,57 @@
     margin:50px;
 }
 
-/*編集･削除*/
+/*編集フォーム-----------------*/
 
-.edit_content {
-    height:30px;
-    width:300px;
+.edit_form {
+    height:250px;
+    width:400px;
+    background-color: yellow;
+    border-radius:15px;
     margin:auto;
-    background-color: #b0c4de;
-    border-radius: 10px;
-    text-align: left;
-    
-    padding:5px;
+    padding:20px;
 }
+
+.edit_logo {
+    text-align: center;
+    font-size:20px;
+    margin-bottom:20px;
+    border-bottom:1px solid black;
+}
+
+.text input[type="text"]{
+    width:380px;
+    padding:5px;
+    margin-bottom: 10px;
+}
+
+.file_form input[type="file"] {
+    width:380px;
+    margin-bottom:10px;
+    padding:5px;
+    
+    background-color:white;
+}
+
+.edit_btn {
+    text-align: center;
+}
+
+.edit_btn input[type="submit"]{
+    background: #1abc9c;
+    padding:5px 10px;
+    border-radius:5px;
+    cursor:pointer;
+    color:#fff;
+}
+
+.edit_btn input:hover {
+  background-color: #31c8aa;
+  
+}
+
+
+
 
 /*新規登録フォーム*/
 
@@ -157,7 +313,11 @@
     height:30px;
     width:200px;
     border-radius: 10px;
+    
 }
+
+
+
 
 /*メンバー*/
 
@@ -197,47 +357,69 @@ td,th{
 
 /*アップデート*/
 
-.update_form {
-    text-align: center;
-    width:100%;
-    height:600px;
-    padding-top: 100px;
+.profile_color {
     background-color: #f0fff0;
 }
 
-.update_form h1{
-    font-size:40px;
-    color:#a9a9a9;
-    opacity:0.9;
-    padding-right:500px;
-    margin-bottom:80px;
+.profile_color h1{
+    text-align: center;
+}
+.profile_img img {
+    height:120px;
+    width:120px;
+    border-radius:25px;
+    box-shadow: 0 2px 6px #c1ced7;
+    object-fit: cover;
+    float:left;
+    margin:20px;
 }
 
-.update_content {
-    /*background-color: #b0c4de;*/
-    width:600px;
-    height:300px;
-    margin: auto;
-    /*border:1px solid #b0c4de;
-    border-radius:20px;*/
-    opacity:0.8;
-}
-.update_content input[type="file"] {
+.profile_form {
+    height:200px;
+    width:500px;
+    background-color: #98fb98;
+    
+    border-radius:10px;
     margin:auto;
 }
 
-.login_content input[type="file"] {
-    margin:auto;
+.profile_name,.profile_email{
+    margin-left: 220px;
+    padding-top: 30px;
+    font-size:30px;
 }
+
+.profile_btn {
+    float: right;
+    margin-top:38px;
+    margin-right:10px;
+}
+
+.profile_content {
+    height:80px;
+    width:500px;
+    margin:5px auto;
+    background-color: #98fb98;
+    
+}
+
+.profile_content p{
+    margin:20px;
+    padding-top:10px;
+}
+
+.content_time {
+    float:right;
+    margin-top:10px;
+}
+
 
 
 /*イメージ*/
 
-.image {
-    
-}
 
-.image img{
+
+.update_content img{
   width: 100px;
   height: 100px;
   border-radius: 40%;
@@ -245,5 +427,33 @@ td,th{
   object-fit: cover;
   /*画像をレイアウト内にフィットさせる*/
   margin-bottom:10px;
+ 
 }
 
+.show_image img{
+  width: 100px;
+  height: 100px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+  /*画像をレイアウト内にフィットさせる*/
+  /*margin-bottom:10px;*/
+}
+
+.show_image{
+    
+    width:150px;
+    height: 150px;
+}
+
+.main {
+    height:150px;
+    width:500px;
+    /*background-color: green;*/
+    margin: auto;
+    border:1px solid khaki;
+}
+
+.show_name {
+    font-size:30px;
+}

@@ -1,20 +1,26 @@
 <%= provide(:title,"Edit_form") %>
-<div class = "update_form">
+<div class = "form profile_color">
     <h1>プロフィール</h1>
-    <% if @error_message %>
-    <div class = "error_message">
-    <%= @error_message %>
-    </div>
-    <% end %>
-    <div class = "image">
-        <img src = "<%= "/#{@current_user.image}" %>"><p>イメージ</p>
-    </div>
-    <%#= form_tag("/user/#{@current_user.id}/update",{multipart: true}) do %>
-    <div class = "update_content">
-        <P>名前: <%= @current_user.name %></P>
-        <p>メールアドレス: <%= @current_user.email %></p>
-        <%= link_to("編集","/user/#{@current_user.id}/destroy_form") %>
-        <%= link_to("削除","/user/#{@current_user.id}/destroy",{method: "post"} ) %>
-    </div>
+        <div class = "profile_form">
+        <a class = "profile_img"><img  src = "<%= "/#{@user.image}" %>"></a>
+        <P class = "profile_name"><%= @current_user.name %></P>
+        <p class = "profile_email"><%= @user.email %></p>
+        <div class = "profile_btn">
+        <%= link_to("編集","/user/#{@user.id}/destroy_form") %>
+        <%#= link_to("削除","/user/#{@user.id}/destroy",{method: "post"} ) %>
+        </div>
+        </div>
+        
+        
+        
+    <h1>コメント一覧</h1>    
+        <% @user.posts.each do |post| %>
+        
+        <div class = "profile_content">
+        <p><%= link_to(post.content,"/post/#{post.id}/edit") %></p>
+        <a class = "content_time"><%= simple_time(post[:created_at]) %></a>
+         </div>
+         <% end %>
+        
+        </div>
     
-</div>

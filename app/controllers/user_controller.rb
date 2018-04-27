@@ -1,6 +1,6 @@
 class UserController < ApplicationController
-  before_action :authenticate_user,{only: [:update,:member,:destroy,:destroy_form]}
-  before_action :forbid_login_user,{only: [:new,:login,:new_entry,:login_form]}
+  #before_action :authenticate_user,{only: [:update,:member,:destroy,:destroy_form]}
+  #before_action :forbid_login_user,{only: [:new,:login,:new_entry,:login_form]}
   
   
   def login_form
@@ -13,7 +13,7 @@ class UserController < ApplicationController
     if @user
     session[:user_id] = @user.id
     flash[:notice] = "ログインしました"
-    redirect_to("/post/show")
+    redirect_to("/post/index")
     else
     @error_message = "メールアドレスまたはパスワードが間違っています"
     @name = params[:name]
@@ -36,7 +36,7 @@ class UserController < ApplicationController
     if @user.save
     session[:user_id] = @user.id
     flash[:notice] = "新規登録完了"
-    redirect_to("/post/show")
+    redirect_to("/post/index")
     else
       @name = params[:name]
       @email = params[:email]
@@ -92,6 +92,12 @@ class UserController < ApplicationController
       render("/user/destroy_form")
     end
     
+  end
+  
+  def edit_form
+    @user = User.find_by(id: params[:id])
+    #@post = Post.find_by(user_id: @user.posts)
+    @post = @user.posts
   end
   
 end

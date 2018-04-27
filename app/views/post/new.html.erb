@@ -1,17 +1,15 @@
 <% provide(:title,"New content") %>
-<div class = "login_form">
-    <h1>新規投稿</h1>
-    
-    <% @post.errors.full_messages.each do |message|%>
+ <% @post.errors.full_messages.each do |message|%>
     <div class = "error_message">
         <%= message %>
     </div>
     <% end %>
-    
+<div class = "Post_form form">
+    <h1>新規投稿</h1>
     <%= form_tag("/post/create") do %>
-    <div class = "login_content new_content">
-        <textarea name = "content" value = "<%= @content %>"></textarea>
-        <input type="submit" value="投稿">
+    <div class = "create_form">
+    <p class = "textarea"><textarea name = "content" value = "<%= @content %>"></textarea></p>
+    <p class = "create_submit"><input type="submit" value="投稿"></p>
     </div>
 </div>
 <% end %>

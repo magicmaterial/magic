@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post 'user/:id/destroy' => 'user#destroy'
   get 'user/:id/destroy_form' => 'user#destroy_form'
   post 'logout' => 'user#logout'
+  get 'post/post_table' => 'post#post_table'
   
   post 'post/:id/update' => 'post#update'
   post 'post/:id/destroy' => 'post#destroy'
@@ -17,9 +18,10 @@ Rails.application.routes.draw do
   get 'user/login_form' => 'user#login_form'
   get 'user/:id/edit_form' => 'user#edit_form'
   post 'user/:id/update' => 'user#update'
+  get 'post/:id/show' => 'post#show'
 
   get '/' => 'home#top'
-  get 'post/show' => 'post#show'
+  get 'post/index' => 'post#index'
   get 'login_form' => 'user#login_form'
   post 'login' => 'user#login'
 
