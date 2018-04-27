@@ -1,0 +1,28 @@
+<%= provide(:title,"Post_table") %>
+<div class = "data_form">
+    <h1>postテーブル</h1>
+    <div class = "data_content">
+        
+    
+<table>
+<tr>
+<th><%= "id" %></th>
+<th><%= "content" %></th>
+<th><%= "created_at" %></th>
+<th><%= "updated_at" %></th>
+<th><%= " user_id" %></th>
+</tr>
+</table>
+<% @post.each do |post| %>
+<table>
+<tr>
+<td><%= post.id %></td>
+<td><%= post.content %></td>
+<td><%= post.created_at %></td>
+<td><%= post.updated_at %></td>
+<td><%= post. user_id %></td>
+</tr>
+<% end %>
+</table>
+</div>
+</div>

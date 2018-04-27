@@ -1,0 +1,16 @@
+<% provide(:title,"投稿一覧") %>
+<div class = "">
+ <h1>投稿一覧</h1>
+  <% @posts.each do |post| %>
+   <div class = "">
+   <div class = "show_image">
+   <img src = "<%= "/#{post.users.image}" %>">    
+   </div>
+
+<div class = "">
+<%#= link_to(post.users.name,"#") %>
+<%= link_to(post.content,"/post/#{post.id}/edit") %>
+</div>
+</div>
+<% end %>
+</div>
